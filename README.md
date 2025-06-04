@@ -1,13 +1,8 @@
 # ultima.zsh-theme — Theme and Settings for Z Shell
 
-**Minimalistic `.zshrc` configuration file designed to provide all the necessary settings for a comfortable terminal experience**
-
-![GitHub Release](https://img.shields.io/github/v/release/egorlem/ultima.zsh-theme?style=for-the-badge&color=7CD996&labelColor=212121)
-![Static Badge](https://img.shields.io/badge/License-WTFPL-blue?style=for-the-badge&labelColor=212121&color=59D9D0&link=https%3A%2F%2Fgithub.com%2Fegorlem%2Fultima.zsh-theme%2Fblob%2Ff8a01d549ee38e720a597f9632ccf7960c7b9c8e%2FLICENSE)
-
 ---
 
-![item zsh prompt](https://github.com/egorlem/021011/blob/main/demos/zsh-theme-demo-min.png?raw=true) 
+![item zsh prompt](https://github.com/egorlem/021011/blob/main/demos/zsh-theme-demo-min.png?raw=true)
 
 ---
 
@@ -17,8 +12,8 @@
 - **Multiple Prompt Levels**: Provides configurations for secondary and tertiary prompt levels (`PS2` and `PS3`).
 - **SSH Status Indicator**: Displays an indicator when an SSH connection is established.
 - **VCS (Version Control System) Integration**: Supports Git, SVN, and Mercurial for showing branch and repository status directly in the prompt.
-    - **Git Integration**: Shows branch name, staged and unstaged changes, and untracked files.
-    - **SVN and Mercurial Integration**: Shows branch name and repository status.
+  - **Git Integration**: Shows branch name, staged and unstaged changes, and untracked files.
+  - **SVN and Mercurial Integration**: Shows branch name and repository status.
 - **Completion Enhancements**: Provides advanced completion settings, including menu completion, caching, and various completion styles and formats.
 - **LS_COLORS Configuration**: Configures `LS_COLORS` for both BSD and GNU systems to enhance the display of directory listings.
 - **LESS and MAN Configuration**: Customizes the behavior and appearance of `less` and `man` pages.
@@ -29,61 +24,31 @@ These features make the `ultima.zsh-theme` a powerful and versatile theme for Z 
 
 ## **Installation**
 
-_For Installation you need git_
-
-### **Manual**
-
-1. Clone the repository:
-
-```shell
-git clone https://github.com/egorlem/ultima.zsh-theme ~/ultima-shell
-```
-2. Update your .zshrc file:
-
-```shell
-echo 'source ~/ultima-shell/ultima.zsh-theme' >> ~/.zshrc
-```
-
 ### **[Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)**
 
 1. Clone the repository:
 
 ```shell
-git clone https://github.com/egorlem/ultima.zsh-theme ~/ultima-shell
+git clone https://github.com/bhargavaman/ultima.zsh-theme
 ```
 
-2. Move file to oh-my-zsh's theme folder:
+2. Link file to oh-my-zsh's theme folder:
 
 ```shell
-mv ~/ultima-shell/ultima.zsh-theme $ZSH/themes/ultima.zsh-theme
+ln ~/path-to-cloned-folder/ultima.zsh-theme/ultima.zsh-theme ultima.zsh-theme
 ```
 
 3. Go to your `~/.zshrc` file and set `ZSH_THEME=ultima`
-
-### **[Zim](https://github.com/zimfw/zimfw)**
-
-1. Update your .zimrc file:
-
-```shell
-echo 'zmodule egorlem/ultima.zsh-theme -n ultima' >> ~/.zimrc
-```
-
-### **[zcomet](https://github.com/agkozak/zcomet)**
-
-1. Add `zcomet load egorlem/ultima.zsh-theme` to ~/.zshrc file.
-
-_Make sure you have `zcomet compinit` somewhere after it._
 
 ---
 
 ## **Recommended settings and compatibility**
 
-
 ### Fonts
 
-Not all fonts contain U+203a unicode unless your system supports **Single Right-Pointing Angle Quotation Mark** install one of the standard fonts on your system. For example **Arial**, **Consolas**, **Impact**. 
+Not all fonts contain U+203a unicode unless your system supports **Single Right-Pointing Angle Quotation Mark** install one of the standard fonts on your system. For example **Arial**, **Consolas**, **Impact**.
 
-For comfortable work, I usually use [JetBrains Mono](https://www.jetbrains.com/lp/mono/). 
+For comfortable work, I usually use [JetBrains Mono](https://www.jetbrains.com/lp/mono/).
 The font is already available characters that are used in the theme and are ideal for full compatibility.
 
 ---
@@ -97,26 +62,32 @@ We welcome contributions to improve `ultima.zsh-theme`! Here’s how you can hel
 1. **Fork the Repository**: Click the "Fork" button at the top right of this repository to create a copy of the repository on your GitHub account.
 
 2. **Clone Your Fork**: Clone the forked repository to your local machine using the following command:
+
     ```bash
     git clone https://github.com/<your-username>/ultima.zsh-theme.git
     ```
+
     Replace `<your-username>` with your GitHub username.
 
 3. **Create a Branch**: Create a new branch for your changes:
+
     ```bash
     git checkout -b feature/your-feature-name
     ```
+
     Replace `your-feature-name` with a descriptive name for your feature or fix.
 
 4. **Make Changes**: Make your changes to the codebase. Ensure your code follows the project's coding standards and conventions.
 
 5. **Commit Changes**: Commit your changes with a descriptive commit message:
+
     ```bash
     git add .
     git commit -m "Add feature: your feature description"
     ```
 
 6. **Push Changes**: Push your changes to your forked repository:
+
     ```bash
     git push origin feature/your-feature-name
     ```
@@ -135,8 +106,9 @@ If you need any help, feel free to reach out by opening an issue or starting a d
 
 ## License
 
-This project is licensed under the __Do What The F*ck You Want To Public License__. See the [LICENSE](https://github.com/egorlem/ultima.zsh-theme/blob/f8a01d549ee38e720a597f9632ccf7960c7b9c8e/LICENSE) file for details.
+This project is licensed under the **Do What The F*ck You Want To Public License**. See the [LICENSE](https://github.com/egorlem/ultima.zsh-theme/blob/f8a01d549ee38e720a597f9632ccf7960c7b9c8e/LICENSE) file for details.
 
 ---
 
-Maintained by [Egor Lem](https://egorlem.com/)
+Original by [Egor Lem](https://egorlem.com/)
+Modified by me [Aman Bhargava](https://links.bhargavaman.com/)
