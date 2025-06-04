@@ -82,14 +82,20 @@ esac
     hook_com[misc]=""
   fi
 }
-# Show up-arrow if branch ahead of remote
+
+# show ahead/behind commits on git status line
 +vi-show_ahead() {
-  local ahead
-  # Count number of commits ahead of upstream
+  local ahead behind arrows=""
+  
+  # Count commits ahead of and behind upstream
   ahead=$(git rev-list --count --left-only @{u}...HEAD 2>/dev/null)
-  if [[ -n "$ahead" && "$ahead" -gt 0 ]]; then
-    hook_com[branch]="↑ "
-  fi
+  behind=$(git rev-list --count --right-only @{u}...HEAD 2>/dev/null)
+
+  # Add arrow symbols
+  [[ "$ahead" -gt 0 ]] && arrows+="↑$ahead "
+  [[ "$behind" -gt 0 ]] && arrows+="↓$behind "
+
+  hook_com[branch]="$arrows"
 }
 
 # SEGMENT/SSH_STATUS -----------------------------------------------------------
