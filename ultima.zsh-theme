@@ -53,11 +53,12 @@ fi
 case "$VCS" in 
    "git")
     # git sepecific 
-    zstyle ':vcs_info:git*+set-message:*' hooks use_git_untracked
+    zstyle ':vcs_info:git*+set-message:*' hooks use_git_untracked show_ahead
     zstyle ':vcs_info:git:*' stagedstr $vc_git_staged_status
     zstyle ':vcs_info:git:*' unstagedstr $vc_unstaged_status
     zstyle ':vcs_info:git:*' actionformats "  ${vc_action} ${vc_git_hash}%m%u%c${char_badge} ${vc_branch_name}"
     zstyle ':vcs_info:git:*' formats " %c%u%m${char_badge} ${vc_branch_name}"
+    zstyle ':vcs_info:git:*' formats " %c%u%m${char_badge} %b"
   ;;
 
   # svn sepecific 
@@ -80,6 +81,15 @@ esac
     hook_com[misc]=$vc_git_untracked_status
   else
     hook_com[misc]=""
+  fi
+}
+# Show up-arrow if branch ahead of remote
++vi-show_ahead() {
+  local ahead
+  # Count number of commits ahead of upstream
+  ahead=$(git rev-list --count --left-only @{u}...HEAD 2>/dev/null)
+  if [[ -n "$ahead" && "$ahead" -gt 0 ]]; then
+    hook_com[branch]="↑ "
   fi
 }
 
