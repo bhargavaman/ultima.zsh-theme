@@ -56,8 +56,8 @@ case "$VCS" in
     zstyle ':vcs_info:git*+set-message:*' hooks use_git_untracked show_ahead
     zstyle ':vcs_info:git:*' stagedstr $vc_git_staged_status
     zstyle ':vcs_info:git:*' unstagedstr $vc_unstaged_status
-    zstyle ':vcs_info:git:*' formats " %c%u%m${char_badge} ${hook_com[branch]}${vc_branch_name}"
-    zstyle ':vcs_info:git:*' actionformats "  ${vc_action} ${vc_git_hash}%m%u%c${char_badge} ${hook_com[branch]}${vc_branch_name}"
+    zstyle ':vcs_info:git:*' formats " %c%u%m${char_badge} %F{green}%b%f"
+    zstyle ':vcs_info:git:*' actionformats "  ${vc_action} ${vc_git_hash}%m%u%c${char_badge} %F{green}%b%f"
   ;;
 
   # svn sepecific 
